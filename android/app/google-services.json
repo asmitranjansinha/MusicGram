@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "397197059652",
+    "project_id": "musicgram-auth",
+    "storage_bucket": "musicgram-auth.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:397197059652:android:8bbe2c305984ddb1dbbe11",
+        "android_client_info": {
+          "package_name": "com.example.musicgram"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "397197059652-qefoaqp90j7t1fqn3jpoppf7qlfj7kae.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZV1sG_Erd5Ou1JwShsE4eZxDDAeWLwXs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "397197059652-qefoaqp90j7t1fqn3jpoppf7qlfj7kae.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
