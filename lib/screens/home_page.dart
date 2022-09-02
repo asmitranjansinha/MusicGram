@@ -1,26 +1,197 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:null_app/utils/routes.dart';
 import 'package:null_app/widgets/drawer.dart';
 
 class HomePage extends StatelessWidget {
 
   const HomePage({Key? key}) : super(key: key);
 
+  // ignore: non_constant_identifier_names
   final String name_app = "Music Gram";
 
   @override
   Widget build(BuildContext context) {
     return 
         Scaffold(
-        backgroundColor: Color(0x00075fb0),
+        backgroundColor: const Color(0x00075fb0),
           appBar: AppBar(
-            backgroundColor: Color(0x00075fb0),
+            backgroundColor: const Color(0x00075fb0),
             title: Text(name_app,
-            textAlign: TextAlign.center,),
+            textAlign: TextAlign.start,),
           ),
-          body: Center(
-            child: Text("Welcome to $name_app!"),
+          body: Column(
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    IconButton(icon: Icon(Icons.favorite),
+                    color: Colors.pink,
+                    iconSize: 35, onPressed: (){} ,),
+
+                    IconButton(icon: Icon(Icons.settings),
+                    color: Colors.white,
+                    iconSize: 35, onPressed: () {
+                      
+                    },)
+                  ],
+                ),
+              ),
+              Column(
+                children: [
+                  Text("RECENTS",textAlign: TextAlign.start,
+                  style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),),
+                  SizedBox(
+                    height: 15,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                    Material(
+                  color: Colors.teal,
+                  borderRadius:
+                            BorderRadius.circular(5),
+                  child: InkWell(
+                    child: Container(
+                      width: 200,
+                      height: 50,
+                      alignment: Alignment.center,
+                      child:const Text(
+                        "Playlist1",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,),
+                      ),   
+                    ),
+                  ),
+                ),
+                Material(
+                  color: Colors.teal,
+                  borderRadius:
+                            BorderRadius.circular(5),
+                  child: InkWell(
+                    child: Container(
+                      width: 200,
+                      height: 50,
+                      alignment: Alignment.center,
+                      child:const Text(
+                        "Playlist2",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,),
+                      ),   
+                    ),
+                  ),
+                ),
+                ]),
+                SizedBox(
+                  height: 12,
+                ),
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                    Material(
+                  color: Colors.teal,
+                  borderRadius:
+                            BorderRadius.circular(5),
+                  child: InkWell(
+                    child: Container(
+                      width: 200,
+                      height: 50,
+                      alignment: Alignment.center,
+                      child:const Text(
+                        "Artist abc",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,),
+                      ),   
+                    ),
+                  ),
+                ),
+                Material(
+                  color: Colors.teal,
+                  borderRadius:
+                            BorderRadius.circular(5),
+                  child: InkWell(
+                    child: Container(
+                      width: 200,
+                      height: 50,
+                      alignment: Alignment.center,
+                      child:const Text(
+                        "Artist bcd",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,),
+                      ),   
+                    ),
+                  ),
+                ),
+                ]),
+                SizedBox(
+                  height: 12,
+                ),
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                    Material(
+                  color: Colors.teal,
+                  borderRadius:
+                            BorderRadius.circular(5),
+                  child: InkWell(
+                    child: Container(
+                      width: 200,
+                      height: 50,
+                      alignment: Alignment.center,
+                      child:const Text(
+                        "Playlist3",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,),
+                      ),   
+                    ),
+                  ),
+                ),
+                Material(
+                  color: Colors.teal,
+                  borderRadius:
+                            BorderRadius.circular(5),
+                  child: InkWell(
+                    child: Container(
+                      width: 200,
+                      height: 50,
+                      alignment: Alignment.center,
+                      child:const Text(
+                        "Playlist4",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,),
+                      ),   
+                    ),
+                  ),
+                ),
+                ]),
+                ],
+              )
+            ],
           ),
         drawer: const AppDrawer(),
+        bottomNavigationBar: CurvedNavigationBar(
+          backgroundColor: Colors.black,
+          color: Colors.teal.shade600,
+          animationDuration: Duration(milliseconds: 400),
+          items: [
+          IconButton(icon:Icon(Icons.home), color: Colors.white, onPressed:() { Navigator.pushNamed(context, AppRoutes.homeRoute);}, ),
+          IconButton(icon:Icon(Icons.library_music_outlined), color: Colors.white, onPressed:() {Navigator.pushNamed(context, AppRoutes.libraryRoute);}, ),
+          IconButton(icon:Icon(Icons.chat), color: Colors.white, onPressed: () {Navigator.pushNamed(context, AppRoutes.chatRoute);},),
+        ]),
         );
     }
 }

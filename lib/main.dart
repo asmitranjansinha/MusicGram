@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:null_app/screens/chat_page.dart';
 import 'package:null_app/screens/home_page.dart';
+import 'package:null_app/screens/library_page.dart';
 import 'package:null_app/screens/login_page.dart';
 import 'package:null_app/screens/sign_up.dart';
 import 'package:null_app/utils/routes.dart';
@@ -20,10 +22,12 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       routes: {
-        '/':(context) => LoginPage(),
-        AppRoutes.homeRoute:(context)  => HomePage(),
+        '/':(context) => const LoginPage(),
+        AppRoutes.homeRoute:(context)  => const HomePage(),
         AppRoutes.loginRoute:(context) => const LoginPage(),
         AppRoutes.signupRoute:(context) => const SignupPage(),
+        AppRoutes.libraryRoute:(context) => const LibraryPage(),
+        AppRoutes.chatRoute:(context) => const ChatPage(),
       },
     );
   }
