@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "385501520471",
+    "project_id": "musicgram-auth-2e4dc",
+    "storage_bucket": "musicgram-auth-2e4dc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:385501520471:android:ca57428cbf310f60f27912",
+        "android_client_info": {
+          "package_name": "com.example.null_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "385501520471-kcl5l411qkn1pv4ib6dve8ccrgqd7i8i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.null_app",
+            "certificate_hash": "847e277a31dfa4ee95807ff1cc2bf8fece8b5384"
+          }
+        },
+        {
+          "client_id": "385501520471-kd7dsd5r90fguh5ipgl47a8fji78feqt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCiPtb-h3ZtqyhgMaK7HHaW48W7fNGGXP8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "385501520471-kd7dsd5r90fguh5ipgl47a8fji78feqt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
