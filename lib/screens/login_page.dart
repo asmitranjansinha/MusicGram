@@ -1,5 +1,8 @@
 // ignore_for_file: use_build_context_synchronously
 
+import 'dart:developer';
+
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:null_app/utils/routes.dart';
@@ -21,11 +24,31 @@ class _LoginPageState extends State<LoginPage> {
         changeButton = true;
       });
       await Future.delayed(const Duration(milliseconds: 500));
+      // ignore: use_build_context_synchronously
       await Navigator.pushNamed(context, AppRoutes.homeRoute);
       setState(() {
         changeButton = false;
       });
     }
+  }
+
+  Future signIn() async {
+    log("signed in");
+    var usr = await FirebaseAuth.instance.signInWithEmailAndPassword(
+      email: _emailController.text.trim(), password: _passwordController.text.trim());
+
+      log(usr.user!.email.toString());
+      
+  }
+
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    super.dispose();
   }
 
   final _formkey = GlobalKey<FormState>();
@@ -70,6 +93,7 @@ class _LoginPageState extends State<LoginPage> {
                 key: _formkey,
                 child: Column(children: [
                   TextFormField(
+                    controller: _emailController,
                     style: const TextStyle(color: Colors.grey),
                     decoration: InputDecoration(
                       hintText: "E-Mail",
@@ -96,6 +120,7 @@ class _LoginPageState extends State<LoginPage> {
                     height: 20.0,
                   ),
                   TextFormField(
+                    controller: _passwordController,
                     style: const TextStyle(color: Colors.grey),
                     obscureText: true,
                     decoration: InputDecoration(
@@ -123,7 +148,7 @@ class _LoginPageState extends State<LoginPage> {
                     color: Colors.teal,
                     borderRadius: BorderRadius.circular(changeButton ? 50 : 30),
                     child: InkWell(
-                      onTap: () => moveToHome(context),
+                      onTap: () => signIn(),
                       child: AnimatedContainer(
                         duration: const Duration(milliseconds: 300),
                         width: changeButton ? 50 : 200,

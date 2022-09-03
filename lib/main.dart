@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:null_app/main_page.dart';
 import 'package:null_app/screens/chat_page.dart';
 import 'package:null_app/screens/home_page.dart';
 import 'package:null_app/screens/library_page.dart';
@@ -31,6 +32,7 @@ class MyApp extends StatelessWidget {
         AppRoutes.signupRoute: (context) => const SignupPage(),
         AppRoutes.libraryRoute: (context) => const LibraryPage(),
         AppRoutes.chatRoute: (context) => const ChatPage(),
+        AppRoutes.mainRoute: (context) => const MainPage(),
       },
     );
   }

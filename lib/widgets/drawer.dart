@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -11,8 +12,8 @@ class AppDrawer extends StatelessWidget {
         color: Colors.black54,
         child: ListView(
           padding: EdgeInsets.zero,
-          children: const [
-            DrawerHeader(
+          children: [
+            const DrawerHeader(
               padding: EdgeInsets.zero,
               child: UserAccountsDrawerHeader(
                 decoration: BoxDecoration(color: Colors.black54),
@@ -22,7 +23,7 @@ class AppDrawer extends StatelessWidget {
                 currentAccountPicture: CircleAvatar(),
               ),
             ),
-            ListTile(
+            const ListTile(
               leading: Icon(
                 CupertinoIcons.home,
                 color: Colors.white,
@@ -33,7 +34,7 @@ class AppDrawer extends StatelessWidget {
                 style: TextStyle(color: Colors.white),
               ),
             ),
-            ListTile(
+            const ListTile(
               leading: Icon(
                 CupertinoIcons.profile_circled,
                 color: Colors.white,
@@ -44,7 +45,7 @@ class AppDrawer extends StatelessWidget {
                 style: TextStyle(color: Colors.white),
               ),
             ),
-            ListTile(
+            const ListTile(
               leading: Icon(
                 CupertinoIcons.mail,
                 color: Colors.white,
@@ -54,7 +55,21 @@ class AppDrawer extends StatelessWidget {
                 textScaleFactor: 1.3,
                 style: TextStyle(color: Colors.white),
               ),
-            )
+            ),
+            ListTile(
+              leading: const Icon(
+                CupertinoIcons.arrow_left,
+                color: Colors.white,
+              ),
+              title: const Text(
+                "Sign Out",
+                textScaleFactor: 1.3,
+                style: TextStyle(color: Colors.white),
+              ),
+              onTap: () {
+                FirebaseAuth.instance.signOut();
+              },
+            ),
           ],
         ),
       ),

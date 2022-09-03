@@ -1,3 +1,6 @@
+import 'dart:developer';
+
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../utils/routes.dart';
@@ -27,6 +30,37 @@ class _SignupPageState extends State<SignupPage> {
   }
 
   final _formkey = GlobalKey<FormState>();
+
+  final _emailController = TextEditingController();
+  final _passwordController = TextEditingController();
+  final _confirmpasswordController = TextEditingController();
+
+  Future signUp() async {
+    log("Signed Up");
+    UserCredential usr;
+     usr = await FirebaseAuth.instance.createUserWithEmailAndPassword(
+      email: _emailController.text.trim(), password: _passwordController.text.trim());
+    
+log(usr.user!.displayName.toString());
+    
+  }
+
+  bool passwordConfirmed() {
+    if(_passwordController.text.trim() == _confirmpasswordController.text.trim()){
+      return true;
+    }
+    else{
+      return false;
+    }
+  }
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    _passwordController.dispose();
+    _confirmpasswordController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -101,6 +135,7 @@ class _SignupPageState extends State<SignupPage> {
                         height: 30,
                       ),
                       TextFormField(
+                        controller: _emailController,
                         style: const TextStyle(color: Colors.grey),
                         decoration: InputDecoration(
                             hintText: "EMAIL",
@@ -122,6 +157,7 @@ class _SignupPageState extends State<SignupPage> {
                         height: 30,
                       ),
                       TextFormField(
+                        controller: _passwordController,
                         style: const TextStyle(color: Colors.grey),
                         obscureText: true,
                         decoration: InputDecoration(
@@ -146,6 +182,7 @@ class _SignupPageState extends State<SignupPage> {
                         height: 30,
                       ),
                       TextFormField(
+                        controller: _confirmpasswordController,
                         style: const TextStyle(color: Colors.grey),
                         obscureText: true,
                         decoration: InputDecoration(
@@ -178,7 +215,7 @@ class _SignupPageState extends State<SignupPage> {
                       borderRadius:
                           BorderRadius.circular(changesignupButton ? 50 : 30),
                       child: InkWell(
-                        onTap: () => moveToHome(context),
+                        onTap: () => signUp(),
                         child: AnimatedContainer(
                           duration: const Duration(milliseconds: 300),
                           width: changesignupButton ? 50 : 200,
