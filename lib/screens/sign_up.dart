@@ -41,7 +41,9 @@ class _SignupPageState extends State<SignupPage> {
      usr = await FirebaseAuth.instance.createUserWithEmailAndPassword(
       email: _emailController.text.trim(), password: _passwordController.text.trim());
     
-log(usr.user!.displayName.toString());
+    if(usr.user != null){
+      Navigator.pushNamedAndRemoveUntil(context, AppRoutes.homeRoute, (route) => false);
+    }
     
   }
 

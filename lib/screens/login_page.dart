@@ -35,10 +35,12 @@ class _LoginPageState extends State<LoginPage> {
   Future signIn() async {
     log("signed in");
     var usr = await FirebaseAuth.instance.signInWithEmailAndPassword(
-      email: _emailController.text.trim(), password: _passwordController.text.trim());
+        email: _emailController.text.trim(),
+        password: _passwordController.text.trim());
 
-      log(usr.user!.email.toString());
-      
+    if(usr.user != null){
+      Navigator.pushNamedAndRemoveUntil(context, AppRoutes.homeRoute, (route) => false);
+    }
   }
 
   final _emailController = TextEditingController();
