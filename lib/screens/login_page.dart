@@ -18,28 +18,21 @@ class _LoginPageState extends State<LoginPage> {
   String name = "";
   bool changeButton = false;
 
-  moveToHome(BuildContext context) async {
-    if (_formkey.currentState!.validate()) {
-      setState(() {
-        changeButton = true;
-      });
-      await Future.delayed(const Duration(milliseconds: 500));
-      // ignore: use_build_context_synchronously
-      await Navigator.pushNamed(context, AppRoutes.homeRoute);
-      setState(() {
-        changeButton = false;
-      });
-    }
-  }
-
   Future signIn() async {
     log("signed in");
     var usr = await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: _emailController.text.trim(),
         password: _passwordController.text.trim());
 
-    if(usr.user != null){
-      Navigator.pushNamedAndRemoveUntil(context, AppRoutes.homeRoute, (route) => false);
+    if (usr.user != null) {
+      Navigator.pushNamedAndRemoveUntil(
+          context, AppRoutes.homeRoute, (route) => false);
+    }
+
+    if (_formkey.currentState!.validate()) {
+      setState(() {
+        changeButton = true;
+      });
     }
   }
 

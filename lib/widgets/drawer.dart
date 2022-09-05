@@ -2,6 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../utils/routes.dart';
+
 class AppDrawer extends StatelessWidget {
   const AppDrawer({Key? key}) : super(key: key);
 
@@ -62,12 +64,18 @@ class AppDrawer extends StatelessWidget {
                 color: Colors.white,
               ),
               title: const Text(
-                "Sign Out",
+                "Log Out",
                 textScaleFactor: 1.3,
                 style: TextStyle(color: Colors.white),
               ),
               onTap: () {
-                FirebaseAuth.instance.signOut();
+                FirebaseAuth.instance.signOut().then((value) {
+                  Navigator.pushNamedAndRemoveUntil(
+                    context,
+                    AppRoutes.loginRoute,
+                    (route) => false,
+                  );
+                });
               },
             ),
           ],
