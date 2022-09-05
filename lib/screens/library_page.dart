@@ -14,33 +14,6 @@ class LibraryPage extends StatelessWidget {
         child: Text("Your Library is Empty!",
             style: TextStyle(color: Colors.white)),
       ),
-      bottomNavigationBar: CurvedNavigationBar(
-          backgroundColor: Colors.black,
-          color: Colors.teal.shade600,
-          animationDuration: const Duration(milliseconds: 400),
-          items: [
-            IconButton(
-              icon: const Icon(Icons.home),
-              color: Colors.white,
-              onPressed: () {
-                Navigator.pushNamed(context, AppRoutes.homeRoute);
-              },
-            ),
-            IconButton(
-              icon: const Icon(Icons.library_music_outlined),
-              color: Colors.white,
-              onPressed: () {
-                Navigator.pushNamed(context, AppRoutes.libraryRoute);
-              },
-            ),
-            IconButton(
-              icon: const Icon(Icons.chat),
-              color: Colors.white,
-              onPressed: () {
-                Navigator.pushNamed(context, AppRoutes.chatRoute);
-              },
-            ),
-          ]),
     );
   }
 }

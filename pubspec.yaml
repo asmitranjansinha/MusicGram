@@ -37,6 +37,7 @@ dependencies:
   google_fonts: ^3.0.1
   curved_navigation_bar: ^1.0.3
   firebase_auth: ^3.7.0
+  flutter_secure_storage: ^6.0.0
 
 
 dev_dependencies:

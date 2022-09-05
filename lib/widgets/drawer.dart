@@ -1,11 +1,14 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 
 import '../utils/routes.dart';
 
 class AppDrawer extends StatelessWidget {
-  const AppDrawer({Key? key}) : super(key: key);
+  AppDrawer({Key? key}) : super(key: key);
+
+  final storage = new FlutterSecureStorage();
 
   @override
   Widget build(BuildContext context) {
@@ -68,7 +71,7 @@ class AppDrawer extends StatelessWidget {
                 textScaleFactor: 1.3,
                 style: TextStyle(color: Colors.white),
               ),
-              onTap: () {
+              onTap: () async {
                 FirebaseAuth.instance.signOut().then((value) {
                   Navigator.pushNamedAndRemoveUntil(
                     context,
@@ -76,6 +79,7 @@ class AppDrawer extends StatelessWidget {
                     (route) => false,
                   );
                 });
+                await storage.delete(key: "uid");
               },
             ),
           ],

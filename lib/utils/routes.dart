@@ -4,5 +4,5 @@ class AppRoutes {
   static String homeRoute = "/home";
   static String libraryRoute = "/library";
   static String chatRoute = "/chat";
-  static String mainRoute = "/main";
+  static String mainactivityRoute = "/mainactivity";
 }

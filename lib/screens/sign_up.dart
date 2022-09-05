@@ -31,7 +31,7 @@ class _SignupPageState extends State<SignupPage> {
     if (usr.user != null) {
       // ignore: use_build_context_synchronously
       Navigator.pushNamedAndRemoveUntil(
-          context, AppRoutes.homeRoute, (route) => false);
+          context, AppRoutes.mainactivityRoute, (route) => false);
     }
 
     if (_formkey.currentState!.validate()) {
