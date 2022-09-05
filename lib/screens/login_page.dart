@@ -19,7 +19,7 @@ class _LoginPageState extends State<LoginPage> {
   String name = "";
   bool changeButton = false;
 
-  final storage = new FlutterSecureStorage();
+  final storage = const FlutterSecureStorage();
 
   //signIn Function
 

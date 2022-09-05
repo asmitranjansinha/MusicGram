@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -9,6 +8,7 @@ import 'package:null_app/screens/login_page.dart';
 import 'package:null_app/screens/main_activity.dart';
 import 'package:null_app/screens/sign_up.dart';
 import 'package:null_app/utils/routes.dart';
+// ignore: depend_on_referenced_packages
 import 'package:firebase_core/firebase_core.dart';
 
 Future main() async {
@@ -16,13 +16,13 @@ Future main() async {
 
   await Firebase.initializeApp();
 
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  MyApp({Key? key}) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
-  final storage = new FlutterSecureStorage();
+  final storage = const FlutterSecureStorage();
 
   Future<bool> checkLoginStatus() async {
     String? value = await storage.read(key: "uid");
@@ -41,9 +41,9 @@ class MyApp extends StatelessWidget {
           future: checkLoginStatus(),
           builder: (BuildContext context, AsyncSnapshot<bool> snapshot) {
             if (snapshot.data == false) {
-              return LoginPage();
+              return const LoginPage();
             }
-            return MainActivity();
+            return const MainActivity();
           }),
       routes: {
         AppRoutes.homeRoute: (context) => const HomePage(),
@@ -51,7 +51,7 @@ class MyApp extends StatelessWidget {
         AppRoutes.signupRoute: (context) => const SignupPage(),
         AppRoutes.libraryRoute: (context) => const LibraryPage(),
         AppRoutes.chatRoute: (context) => const ChatPage(),
-        AppRoutes.mainactivityRoute:(context) => MainActivity(),
+        AppRoutes.mainactivityRoute: (context) => const MainActivity(),
       },
     );
   }

@@ -13,6 +13,7 @@ class MainActivity extends StatefulWidget {
 }
 
 class _MainActivityState extends State<MainActivity> {
+  // ignore: non_constant_identifier_names
   final String name_app = "Music Gram";
 
   int index = 0;
@@ -60,7 +61,7 @@ class _MainActivityState extends State<MainActivity> {
         items: items,
         onTap: (index) => setState(() => this.index = index),
       ),
-      drawer: AppDrawer(),
+      drawer: const AppDrawer(),
     );
   }
 }

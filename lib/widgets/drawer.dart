@@ -6,9 +6,9 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import '../utils/routes.dart';
 
 class AppDrawer extends StatelessWidget {
-  AppDrawer({Key? key}) : super(key: key);
+  const AppDrawer({Key? key}) : super(key: key);
 
-  final storage = new FlutterSecureStorage();
+  final storage = const FlutterSecureStorage();
 
   @override
   Widget build(BuildContext context) {
