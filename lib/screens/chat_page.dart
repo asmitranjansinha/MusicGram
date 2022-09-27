@@ -5,13 +5,24 @@ class ChatPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Color(0x00075fb0),
-      body: Center(
-          child: Text(
-        "You have not added any friends yet!",
-        style: TextStyle(color: Colors.white),
-      )),
+    return Container(
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          colors: [
+            Color(0xff000000),
+            Color(0xff343434)
+        ])
+      ),
+      child: const Scaffold(
+        backgroundColor: Color(0x00075fb0),
+        body: Center(
+            child: Text(
+          "You have not added any friends yet!",
+          style: TextStyle(color: Colors.white),
+        )),
+      ),
     );
   }
 }

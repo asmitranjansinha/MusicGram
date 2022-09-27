@@ -5,8 +5,9 @@ import 'dart:developer';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:null_app/main.dart';
 import 'package:null_app/utils/routes.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -19,7 +20,7 @@ class _LoginPageState extends State<LoginPage> {
   String name = "";
   bool changeButton = false;
 
-  final storage = const FlutterSecureStorage();
+
 
   //signIn Function
 
@@ -33,9 +34,9 @@ class _LoginPageState extends State<LoginPage> {
     //     .signInWithEmailAndPassword(
     //         email: _emailController.text, password: _passwordController.text);
     // print(userCredential.user?.uid);
-    await storage.write(key: "uid", value: userCredential.user?.uid);
 
     if (usr.user != null) {
+      prefs.setBool("isLogin", true);
       Navigator.pushNamedAndRemoveUntil(
           context, AppRoutes.mainactivityRoute, (route) => false);
     }

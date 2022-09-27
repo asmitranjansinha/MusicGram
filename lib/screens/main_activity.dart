@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'chat_page.dart';
 import 'home_page.dart';
 import 'library_page.dart';
-import '../widgets/drawer.dart';
 
 class MainActivity extends StatefulWidget {
   const MainActivity({Key? key}) : super(key: key);
@@ -20,7 +19,7 @@ class _MainActivityState extends State<MainActivity> {
 
   final screens = [
     const HomePage(),
-    const LibraryPage(),
+    LibraryPage(),
     const ChatPage(),
   ];
 
@@ -44,24 +43,18 @@ class _MainActivityState extends State<MainActivity> {
       ),
     ];
     return Scaffold(
-      backgroundColor: const Color(0x00075fb0),
-      appBar: AppBar(
-        backgroundColor: const Color(0x00075fb0),
-        title: Text(
-          name_app,
-          textAlign: TextAlign.start,
-        ),
-      ),
+      extendBodyBehindAppBar: true,
+      extendBody: true,
+      
       body: screens[index],
       bottomNavigationBar: CurvedNavigationBar(
         height: 72,
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.white,
         color: Colors.teal.shade600,
         animationDuration: const Duration(milliseconds: 400),
         items: items,
         onTap: (index) => setState(() => this.index = index),
       ),
-      drawer: const AppDrawer(),
     );
   }
 }

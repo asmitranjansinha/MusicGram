@@ -1,14 +1,13 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import 'package:null_app/main.dart';
 
 import '../utils/routes.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({Key? key}) : super(key: key);
 
-  final storage = const FlutterSecureStorage();
 
   @override
   Widget build(BuildContext context) {
@@ -73,13 +72,14 @@ class AppDrawer extends StatelessWidget {
               ),
               onTap: () async {
                 FirebaseAuth.instance.signOut().then((value) {
+                  prefs.setBool("isLogin", false);
                   Navigator.pushNamedAndRemoveUntil(
                     context,
                     AppRoutes.loginRoute,
                     (route) => false,
                   );
                 });
-                await storage.delete(key: "uid");
+              
               },
             ),
           ],
