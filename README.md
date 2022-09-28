@@ -1,4 +1,4 @@
-# null_app
+# MusicGram
 
 A new Flutter project.
 
