@@ -26,20 +26,20 @@ class _MainActivityState extends State<MainActivity> {
   @override
   Widget build(BuildContext context) {
     final items = <Widget>[
-      const Icon(
+      Icon(
         Icons.home,
         size: 30,
-        color: Colors.white,
+        color: Colors.teal[200],
       ),
-      const Icon(
+      Icon(
         Icons.library_music_outlined,
         size: 30,
-        color: Colors.white,
+        color: Colors.teal[200],
       ),
-      const Icon(
+      Icon(
         Icons.chat,
         size: 30,
-        color: Colors.white,
+        color: Colors.teal[200],
       ),
     ];
     return Scaffold(
@@ -50,7 +50,7 @@ class _MainActivityState extends State<MainActivity> {
       bottomNavigationBar: CurvedNavigationBar(
         height: 72,
         backgroundColor: Colors.white,
-        color: Colors.teal.shade600,
+        color: const Color(0xff000000),
         animationDuration: const Duration(milliseconds: 400),
         items: items,
         onTap: (index) => setState(() => this.index = index),

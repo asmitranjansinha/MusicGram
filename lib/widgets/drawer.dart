@@ -1,14 +1,9 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:null_app/main.dart';
 
-import '../utils/routes.dart';
 
 class AppDrawer extends StatelessWidget {
   const AppDrawer({Key? key}) : super(key: key);
-
-
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -16,8 +11,8 @@ class AppDrawer extends StatelessWidget {
         color: Colors.black54,
         child: ListView(
           padding: EdgeInsets.zero,
-          children: [
-            const DrawerHeader(
+          children: const [
+            DrawerHeader(
               padding: EdgeInsets.zero,
               child: UserAccountsDrawerHeader(
                 decoration: BoxDecoration(color: Colors.black54),
@@ -27,7 +22,7 @@ class AppDrawer extends StatelessWidget {
                 currentAccountPicture: CircleAvatar(),
               ),
             ),
-            const ListTile(
+            ListTile(
               leading: Icon(
                 CupertinoIcons.home,
                 color: Colors.white,
@@ -38,7 +33,7 @@ class AppDrawer extends StatelessWidget {
                 style: TextStyle(color: Colors.white),
               ),
             ),
-            const ListTile(
+            ListTile(
               leading: Icon(
                 CupertinoIcons.profile_circled,
                 color: Colors.white,
@@ -49,7 +44,7 @@ class AppDrawer extends StatelessWidget {
                 style: TextStyle(color: Colors.white),
               ),
             ),
-            const ListTile(
+            ListTile(
               leading: Icon(
                 CupertinoIcons.mail,
                 color: Colors.white,
@@ -59,28 +54,6 @@ class AppDrawer extends StatelessWidget {
                 textScaleFactor: 1.3,
                 style: TextStyle(color: Colors.white),
               ),
-            ),
-            ListTile(
-              leading: const Icon(
-                CupertinoIcons.arrow_left,
-                color: Colors.white,
-              ),
-              title: const Text(
-                "Log Out",
-                textScaleFactor: 1.3,
-                style: TextStyle(color: Colors.white),
-              ),
-              onTap: () async {
-                FirebaseAuth.instance.signOut().then((value) {
-                  prefs.setBool("isLogin", false);
-                  Navigator.pushNamedAndRemoveUntil(
-                    context,
-                    AppRoutes.loginRoute,
-                    (route) => false,
-                  );
-                });
-              
-              },
             ),
           ],
         ),

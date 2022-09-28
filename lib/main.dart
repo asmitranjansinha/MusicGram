@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:null_app/helper/helper_function.dart';
 import 'package:null_app/screens/chat_page.dart';
 import 'package:null_app/screens/home_page.dart';
 import 'package:null_app/screens/library_page.dart';
@@ -30,7 +31,7 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  
+  bool _isSignedIn = false;
 
 
   // Future<bool> checkLoginStatus() async {
@@ -42,12 +43,29 @@ class _MyAppState extends State<MyApp> {
   // }
 
   @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    getUserLoggedInStatus();
+  }
+
+  getUserLoggedInStatus() async{
+    await HelperFunction.getUserLoggedInStatus().then((value) {
+      if(value!=null){
+        setState(() {
+          _isSignedIn = value;
+        });
+      }
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     bool isLogin = prefs.getBool("isLogin")?? false;
     return MaterialApp(
       theme: ThemeData(fontFamily: GoogleFonts.poppins().fontFamily),
       debugShowCheckedModeBanner: false,
-      home: (isLogin) ? MainActivity() : LoginPage(),
+      home: _isSignedIn ? const MainActivity() : const LoginPage(),
       routes: {
         AppRoutes.homeRoute: (context) => const HomePage(),
         AppRoutes.loginRoute: (context) => const LoginPage(),

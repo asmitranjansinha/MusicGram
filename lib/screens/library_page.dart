@@ -46,8 +46,8 @@ class _LibraryPageState extends State<LibraryPage> {
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
           colors: [
+            Color(0xff343434),
             Color(0xff000000),
-            Color(0xff343434)
         ])
       ),
       child: Scaffold(

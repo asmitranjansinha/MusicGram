@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:null_app/services/auth_service.dart';
 
 import '../widgets/drawer.dart';
 
@@ -13,14 +14,17 @@ class _HomePageState extends State<HomePage> {
 
   final String name_app = "Music Gram";
   // ignore: non_constant_identifier_names
+
+  AuthService authService = AuthService();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       extendBody: false,
       backgroundColor: Colors.transparent,
-      drawer: const AppDrawer(),
+      drawer: AppDrawer(),
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: const Color(0xff343434),
         elevation: 0,
         title: Text(
           name_app,
@@ -33,8 +37,8 @@ class _HomePageState extends State<HomePage> {
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
           colors: [
-            Color(0xff000000),
-            Color(0xff343434)
+            Color(0xff343434),
+            Color(0xff000000)
         ])
       ),
         child: Column(children: [
@@ -44,10 +48,12 @@ class _HomePageState extends State<HomePage> {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 IconButton(
-                  icon: const Icon(Icons.favorite),
-                  color: Colors.pink,
+                  icon: const Icon(Icons.exit_to_app),
+                  color: Colors.white,
                   iconSize: 35,
-                  onPressed: () {},
+                  onPressed: () {
+                    authService.signOut();
+                  },
                 )
               ],
             ),

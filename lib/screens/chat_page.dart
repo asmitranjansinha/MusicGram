@@ -11,8 +11,8 @@ class ChatPage extends StatelessWidget {
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
           colors: [
-            Color(0xff000000),
-            Color(0xff343434)
+            Color(0xff343434),
+            Color(0xff000000)
         ])
       ),
       child: const Scaffold(
