@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors_in_immutables
+
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
@@ -29,6 +31,7 @@ class _LibraryPageState extends State<LibraryPage> {
 
   @override
   void initState() {
+    // ignore: todo
     // TODO: implement initState
     super.initState();
     requestPermision();

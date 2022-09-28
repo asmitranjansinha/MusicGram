@@ -1,7 +1,8 @@
+// ignore_for_file: non_constant_identifier_names, duplicate_ignore
+
 import 'package:flutter/material.dart';
 import 'package:null_app/services/auth_service.dart';
 
-import '../widgets/drawer.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -22,7 +23,6 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       extendBody: false,
       backgroundColor: Colors.transparent,
-      drawer: AppDrawer(),
       appBar: AppBar(
         backgroundColor: const Color(0xff343434),
         elevation: 0,

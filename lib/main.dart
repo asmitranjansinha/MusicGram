@@ -44,6 +44,7 @@ class _MyAppState extends State<MyApp> {
 
   @override
   void initState() {
+    // ignore: todo
     // TODO: implement initState
     super.initState();
     getUserLoggedInStatus();
@@ -61,7 +62,6 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    bool isLogin = prefs.getBool("isLogin")?? false;
     return MaterialApp(
       theme: ThemeData(fontFamily: GoogleFonts.poppins().fontFamily),
       debugShowCheckedModeBanner: false,

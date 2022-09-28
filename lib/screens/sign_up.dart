@@ -1,6 +1,4 @@
-import 'dart:developer';
 
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:null_app/helper/helper_function.dart';
@@ -78,7 +76,7 @@ class _SignupPageState extends State<SignupPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0x00075fb0),
-      body: _isLoading ? Center(child: CircularProgressIndicator(color: Colors.teal)) : SingleChildScrollView(
+      body: _isLoading ? const Center(child: CircularProgressIndicator(color: Colors.teal)) : SingleChildScrollView(
         physics: const AlwaysScrollableScrollPhysics(),
         child: Form(
             key: _formkey,

@@ -1,3 +1,5 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -9,53 +11,19 @@ class AppDrawer extends StatelessWidget {
     return Drawer(
       child: Container(
         color: Colors.black54,
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: const [
-            DrawerHeader(
-              padding: EdgeInsets.zero,
-              child: UserAccountsDrawerHeader(
-                decoration: BoxDecoration(color: Colors.black54),
-                margin: EdgeInsets.zero,
-                accountName: Text("Asmit Ranjan Sinah"),
-                accountEmail: Text("sinhaasmit99@gmail.com"),
-                currentAccountPicture: CircleAvatar(),
+        child: SafeArea(
+          child: ListView(
+            padding: EdgeInsets.symmetric(vertical: 50),
+            children: const [
+              ListTile(
+                leading: Icon(
+                  CupertinoIcons.profile_circled,
+                  color: Colors.white,
+                  size: 130,
+                ),
               ),
-            ),
-            ListTile(
-              leading: Icon(
-                CupertinoIcons.home,
-                color: Colors.white,
-              ),
-              title: Text(
-                "Home",
-                textScaleFactor: 1.3,
-                style: TextStyle(color: Colors.white),
-              ),
-            ),
-            ListTile(
-              leading: Icon(
-                CupertinoIcons.profile_circled,
-                color: Colors.white,
-              ),
-              title: Text(
-                "Profile",
-                textScaleFactor: 1.3,
-                style: TextStyle(color: Colors.white),
-              ),
-            ),
-            ListTile(
-              leading: Icon(
-                CupertinoIcons.mail,
-                color: Colors.white,
-              ),
-              title: Text(
-                "E-Mail",
-                textScaleFactor: 1.3,
-                style: TextStyle(color: Colors.white),
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
