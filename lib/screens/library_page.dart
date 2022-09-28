@@ -6,7 +6,7 @@ import 'package:on_audio_query/on_audio_query.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 class LibraryPage extends StatefulWidget {
-  LibraryPage({Key? key}) : super(key: key);
+  const LibraryPage({Key? key}) : super(key: key);
 
   @override
   State<LibraryPage> createState() => _LibraryPageState();
@@ -29,6 +29,7 @@ class _LibraryPageState extends State<LibraryPage> {
 
   @override
   void initState() {
+    // ignore: todo
     // TODO: implement initState
     super.initState();
     requestPermision();

@@ -337,7 +337,7 @@ class _ChatPageState extends State<ChatPage> {
             onTap: () {
               popUpDialog(context);
             },
-            child: Icon(
+            child: const Icon(
               Icons.add_circle,
               color: Colors.white,
               size: 75,
