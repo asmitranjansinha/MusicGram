@@ -1,8 +1,8 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'chat_page.dart';
+import 'chat/chat_page.dart';
 import 'home_page.dart';
-import 'library_page.dart';
+import 'music/library_page.dart';
 
 class MainActivity extends StatefulWidget {
   const MainActivity({Key? key}) : super(key: key);

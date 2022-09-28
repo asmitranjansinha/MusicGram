@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:null_app/helper/helper_function.dart';
-import 'package:null_app/screens/chat_page.dart';
+import 'package:null_app/screens/chat/chat_page.dart';
 import 'package:null_app/screens/home_page.dart';
-import 'package:null_app/screens/library_page.dart';
+import 'package:null_app/screens/music/library_page.dart';
 import 'package:null_app/screens/login_page.dart';
 import 'package:null_app/screens/main_activity.dart';
 import 'package:null_app/screens/sign_up.dart';

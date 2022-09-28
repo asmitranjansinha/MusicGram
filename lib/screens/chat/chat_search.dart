@@ -3,11 +3,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:null_app/screens/chat_open.dart';
 import 'package:null_app/services/database_services.dart';
 
-import '../helper/helper_function.dart';
-import '../widgets/widgets.dart';
+import '../../helper/helper_function.dart';
+import '../../widgets/widgets.dart';
+import '../chat_open.dart';
 
 class SearchPage extends StatefulWidget {
   const SearchPage({Key? key}) : super(key: key);

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:null_app/screens/chat_open.dart';
 import 'package:null_app/widgets/widgets.dart';
+
+import '../screens/chat_open.dart';
 
 class GroupTile extends StatefulWidget {
   final String userName;

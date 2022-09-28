@@ -4,14 +4,14 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:null_app/helper/helper_function.dart';
-import 'package:null_app/screens/chat_search.dart';
+import 'package:null_app/screens/chat/chat_search.dart';
 import 'package:null_app/screens/login_page.dart';
 import 'package:null_app/screens/profile_page.dart';
 import 'package:null_app/services/database_services.dart';
 
-import '../services/auth_service.dart';
-import '../widgets/group_tile.dart';
-import '../widgets/widgets.dart';
+import '../../services/auth_service.dart';
+import '../../widgets/group_tile.dart';
+import '../../widgets/widgets.dart';
 
 class ChatPage extends StatefulWidget {
   const ChatPage({Key? key}) : super(key: key);
@@ -337,7 +337,7 @@ class _ChatPageState extends State<ChatPage> {
             onTap: () {
               popUpDialog(context);
             },
-            child: Icon(
+            child: const Icon(
               Icons.add_circle,
               color: Colors.white,
               size: 75,

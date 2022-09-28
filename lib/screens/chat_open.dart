@@ -6,9 +6,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:null_app/services/database_services.dart';
 
-import '../widgets/message_tile.dart';
-import '../widgets/widgets.dart';
-import 'group_info.dart';
+import '../../widgets/message_tile.dart';
+import '../../widgets/widgets.dart';
+import 'chat/group_info.dart';
 
 class ChatOpen extends StatefulWidget {
   final String groupId;

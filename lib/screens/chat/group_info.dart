@@ -1,9 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:null_app/screens/chat_page.dart';
+import 'package:null_app/screens/chat/chat_page.dart';
 import 'package:null_app/services/database_services.dart';
 
-import '../widgets/widgets.dart';
+import '../../widgets/widgets.dart';
 
 class GroupInfo extends StatefulWidget {
   final String groupId;
