@@ -48,11 +48,10 @@ class _HomePageState extends State<HomePage> {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 IconButton(
-                  icon: const Icon(Icons.exit_to_app),
-                  color: Colors.white,
+                  icon: const Icon(Icons.favorite),
+                  color: Colors.pink,
                   iconSize: 35,
                   onPressed: () {
-                    authService.signOut();
                   },
                 )
               ],

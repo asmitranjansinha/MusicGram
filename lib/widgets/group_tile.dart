@@ -45,11 +45,11 @@ class _GroupTileState extends State<GroupTile> {
           ),
           title: Text(
             widget.groupName,
-            style: const TextStyle(fontWeight: FontWeight.bold),
+            style: const TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
           ),
           subtitle: Text(
             "Join the conversation as ${widget.userName}",
-            style: const TextStyle(fontSize: 13),
+            style: const TextStyle(fontSize: 13, color: Colors.white),
           ),
         ),
       ),
